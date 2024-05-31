@@ -9,7 +9,8 @@ import { Op } from "sequelize";
 import { LinkPrecedenceTypes } from "./linkPrecedence.js";
 
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 
 dotenv.config();
 app.use(express.json());
