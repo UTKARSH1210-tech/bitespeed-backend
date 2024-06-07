@@ -6,9 +6,19 @@ import { Sequelize, DataTypes , Op} from 'sequelize';
 //   dialect: 'postgres'
 // });
 
-export const sequelize = new Sequelize('postgres_service_nst5', 'postgres_service_nst5_user', 'rEkNxBelKINzMxKVfjr3hKMEC6YC4bvn', {
-  host: 'cpcmi3q1hbls73c8pl20-a.oregon-postgres.render.com',
-  dialect: 'postgres'
+// export const sequelize = new Sequelize('postgres_service_nst5', 'postgres_service_nst5_user', 'rEkNxBelKINzMxKVfjr3hKMEC6YC4bvn', {
+//   host: 'cpcmi3q1hbls73c8pl20-a.oregon-postgres.render.com',
+//   dialect: 'postgres'
+// });
+// postgres://postgres_service_nst5_user:rEkNxBelKINzMxKVfjr3hKMEC6YC4bvn@dpg-cpcmi3q1hbls73c8pl20-a/postgres_service_nst5
+export const sequelize = new Sequelize({
+    dialect : 'postgres',
+    host : 'dpg-cpcmi3q1hbls73c8pl20-a',
+    port : 5432,
+    database : 'postgres_service_nst5',
+    username : 'postgres_service_nst5_user',
+    password : 'rEkNxBelKINzMxKVfjr3hKMEC6YC4bvn'
+
 });
 
 export const Contact = sequelize.define('Contact', {

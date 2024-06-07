@@ -264,7 +264,7 @@ app.use("/", (req, res) => {
 });
 
 app.listen(PORT, async () => {
-    // await sequelize.sync();
+    await sequelize.sync();
     console.log(`Listening to port ${PORT}`);
 });
 
