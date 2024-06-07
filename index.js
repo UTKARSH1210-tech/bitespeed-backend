@@ -9,8 +9,8 @@ import { Op } from "sequelize";
 import { LinkPrecedenceTypes } from "./linkPrecedence.js";
 
 
-// const PORT = process.env.PORT || 5000;
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
+// const PORT = 3000;
 
 dotenv.config();
 app.use(express.json());
@@ -137,6 +137,7 @@ function getUniqueEmails(records) {
 
 
 app.post('/identify', async (req, res) => {
+  await sequelize.sync();
     try {
       const { email, phoneNumber } = req.body;
 
@@ -263,7 +264,7 @@ app.use("/", (req, res) => {
 });
 
 app.listen(PORT, async () => {
-    await sequelize.sync();
+    // await sequelize.sync();
     console.log(`Listening to port ${PORT}`);
 });
 
